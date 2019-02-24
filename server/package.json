@@ -1,0 +1,16 @@
+{
+  "name": "new-scholar-server",
+  "version": "1.0.0",
+  "description": "School management system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/priyanperera/new-scholar/server"
+  },
+  "author": "Priyan Perera",
+  "license": "ISC"
+}
