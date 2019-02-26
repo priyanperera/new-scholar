@@ -1,0 +1,7 @@
+{
+    "connectionString": "mongodb+srv://${username}:${password}@cluster0-5ezsm.mongodb.net/new-scholar?retryWrites=true",
+    "apiUrl": "http://localhost:4000",
+    "secret": "ksjd!45",
+    "username": "sa",
+    "password": "Priyan!23"
+}

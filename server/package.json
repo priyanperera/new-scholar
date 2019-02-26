@@ -12,5 +12,11 @@
     "url": "https://github.com/priyanperera/new-scholar/server"
   },
   "author": "Priyan Perera",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1"
+  }
 }
