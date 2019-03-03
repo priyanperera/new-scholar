@@ -13,6 +13,7 @@ router.delete('/:_id', _delete);
 module.exports = router;
  
 function register(req, res) {
+    console.log('register');
     userService.create(req.body)
         .then(function () {
             res.json('success');
@@ -23,6 +24,7 @@ function register(req, res) {
 }
  
 function getAll(req, res) {
+    console.log('getAll');
     userService.getAll()
         .then(function (users) {
             res.send(users);

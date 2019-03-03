@@ -9,7 +9,7 @@ var config = require('config.json');
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
- 
+
 // use JWT auth to secure the api, the token can be passed in the authorization header or querystring
 app.use(expressJwt({
     secret: config.secret,
@@ -21,11 +21,22 @@ app.use(expressJwt({
         }
         return null;
     }
-}).unless({ path: ['/users/authenticate', '/users/register'] }));
- 
+}).unless({ path: ['/security/authenticate', '/users/register'] }));
+
 // routes
+app.use('/security', require('./controllers/security.controller'));
 app.use('/users', require('./controllers/users.controller'));
- 
+
+// custom error handler
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+      return res.status(403).send({
+        success: false,
+        message: 'No token provided.'
+      });
+    }
+});
+
 // start server
 var port = process.env.NODE_ENV === 'production' ? 80 : 4000;
 var server = app.listen(port, function () {

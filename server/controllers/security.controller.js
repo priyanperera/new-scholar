@@ -1,4 +1,3 @@
-var config = require('config.json');
 var express = require('express');
 var router = express.Router();
 var userService = require('services/security.service');
@@ -9,6 +8,7 @@ router.post('/authenticate', authenticate);
 module.exports = router;
 
 function authenticate(req, res) {
+    console.log('authenticate');
     userService.authenticate(req.body.username, req.body.password)
         .then(function (user) {
             if (user) {
